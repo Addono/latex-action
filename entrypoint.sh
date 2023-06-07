@@ -10,7 +10,7 @@ extra_system_packages="$5"
 extra_font_packages="$6"
 
 if [ -n "$extra_system_packages" ]; then
-  apt-get update
+  apt-get --allow-releaseinfo-change update
   for pkg in $extra_system_packages; do
     echo "Install $pkg by apt"
     apt-get -y install "$pkg"
